@@ -254,11 +254,14 @@
                         <div class="lg:col-span-4 bg-white border border-slate-200 rounded-xl p-5 shadow-sm space-y-4">
                             <div class="flex items-center space-x-2 text-indigo-600 border-b border-slate-100 pb-3">
                                 <i data-lucide="info" class="w-4 h-4"></i>
-                                <h3 class="text-sm font-bold tracking-wide uppercase text-slate-900">Article Guide</h3>
+                                <h3 class="text-sm font-bold tracking-wide text-slate-900">Article Guide</h3>
                             </div>
-                            <ul class="space-y-3.5 text-xs text-slate-600 leading-relaxed">
+                            <ul class="space-y-3 text-xs text-slate-600 leading-relaxed">
                                 <li><strong class="text-slate-800 block mb-0.5">No Duplicates:</strong> Search existing articles to ensure this content is not already covered.</li>
-                                <li><strong class="text-slate-800 block mb-0.5">Categorization:</strong> Place the article in the correct category.</li>
+                                <li><strong class="text-slate-800 block mb-0.5">Categorization:</strong> Place the article in the correct, most relevant category for user discovery.</li>
+                                <li><strong class="text-slate-800 block mb-0.5">Accuracy:</strong> Verify all instructions, links, and examples are accurate and current.</li>
+                                <li><strong class="text-slate-800 block mb-0.5">Precise Tagging:</strong> Use descriptive tags and keywords for search optimization.</li>
+                                <li><strong class="text-slate-800 block mb-0.5">Sensitivity Check:</strong> Ensure no confidential support information or customer data is included.</li>
                             </ul>
                             <div class="grid grid-cols-2 gap-3 pt-4 border-t border-slate-100">
                                 <button onclick="handlePublishFormSubmit()" class="bg-blue-600 hover:bg-blue-700 text-white font-medium py-2 rounded-lg text-xs transition-colors shadow-sm">Publish</button>
