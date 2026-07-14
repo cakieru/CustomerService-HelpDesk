@@ -68,6 +68,7 @@
         </div>
 
         <div id="portalPillarCards" class="grid grid-cols-1 md:grid-cols-3 gap-6 block">
+            <!-- Submit a Request Card (Now a Static Link Button) -->
             <a href="#" class="bg-white border border-slate-200 rounded-2xl p-6 shadow-sm hover:shadow-md transition-all flex flex-col justify-between h-48 cursor-pointer group text-left">
                 <div>
                     <div class="w-10 h-10 bg-indigo-50 text-indigo-600 rounded-xl flex items-center justify-center mb-4">
@@ -79,6 +80,7 @@
                 <span class="text-xs font-semibold text-blue-600 group-hover:underline inline-flex items-center gap-1">Get started &rarr;</span>
             </a>
 
+            <!-- Track My Tickets Card (Now a Static Link Button) -->
             <a href="#" class="bg-white border border-slate-200 rounded-2xl p-6 shadow-sm hover:shadow-md transition-all flex flex-col justify-between h-48 cursor-pointer group text-left">
                 <div>
                     <div class="w-10 h-10 bg-emerald-50 text-emerald-600 rounded-xl flex items-center justify-center mb-4">
@@ -90,6 +92,7 @@
                 <span class="text-xs font-semibold text-emerald-600 group-hover:underline inline-flex items-center gap-1">View Tickets &rarr;</span>
             </a>
 
+            <!-- Knowledge Base Card -->
             <div onclick="switchView('ARTICLES')" class="bg-white border border-slate-200 rounded-2xl p-6 shadow-sm hover:shadow-md transition-all flex flex-col justify-between h-48 cursor-pointer group">
                 <div>
                     <div class="w-10 h-10 bg-amber-50 text-amber-600 rounded-xl flex items-center justify-center mb-4">
@@ -108,122 +111,6 @@
         </div>
 
         <div id="filteredArticlesContainer" class="space-y-6 hidden"></div>
-
-        <div id="portalNewRequestView" class="space-y-6 hidden">
-            <nav class="text-xs text-slate-400 flex items-center space-x-2 mb-2 select-none">
-                <button onclick="resetPortalHome()" class="hover:underline flex items-center gap-1 text-slate-400 font-medium"><i data-lucide="home" class="w-3 h-3"></i> Home</button>
-                <span class="text-slate-300">&rsaquo;</span>
-                <span class="text-slate-500 font-medium">Submit a Request</span>
-            </nav>
-            <div class="pb-2">
-                <h1 class="text-3xl font-bold text-slate-900 tracking-tight">Submit a support request</h1>
-                <p class="text-xs text-slate-500 mt-0.5 font-medium">Please provide details about your issue, and we will get back to you as soon as possible.</p>
-            </div>
-
-            <form onsubmit="handleSupportRequestSubmit(event)" id="supportRequestForm" class="bg-white border border-slate-200 rounded-2xl p-8 shadow-sm space-y-6 text-left max-w-2xl">
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                    <div class="space-y-1.5">
-                        <label class="text-xs font-bold text-slate-700 tracking-wide uppercase">Your Name <span class="text-rose-500">*</span></label>
-                        <input required type="text" name="name" class="w-full px-4 py-2.5 bg-slate-50 border border-slate-200 rounded-xl text-xs focus:outline-none focus:ring-2 focus:ring-blue-500 transition-all text-slate-700" placeholder="e.g. John Doe">
-                    </div>
-                    <div class="space-y-1.5">
-                        <label class="text-xs font-bold text-slate-700 tracking-wide uppercase">Email Address <span class="text-rose-500">*</span></label>
-                        <input required type="email" name="email" class="w-full px-4 py-2.5 bg-slate-50 border border-slate-200 rounded-xl text-xs focus:outline-none focus:ring-2 focus:ring-blue-500 transition-all text-slate-700" placeholder="yourname@example.com">
-                    </div>
-                </div>
-
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-                    <div class="space-y-1.5">
-                        <label class="text-xs font-bold text-slate-700 tracking-wide uppercase">Category <span class="text-rose-500">*</span></label>
-                        <select required name="category" class="w-full px-3 py-2.5 bg-slate-50 border border-slate-200 rounded-xl text-xs focus:outline-none focus:ring-2 focus:ring-blue-500 transition-all text-slate-700">
-                            <option value="">Choose category</option>
-                            <option value="shipping">Shipping & Delivery</option>
-                            <option value="returns">Returns & Refunds</option>
-                            <option value="damaged">Damaged Items</option>
-                            <option value="product">Product Information</option>
-                            <option value="subscriptions">Subscription</option>
-                            <option value="account">Account Management</option>
-                        </select>
-                    </div>
-                    <div class="space-y-1.5">
-                        <label class="text-xs font-bold text-slate-700 tracking-wide uppercase">Priority <span class="text-rose-500">*</span></label>
-                        <select required name="priority" class="w-full px-3 py-2.5 bg-slate-50 border border-slate-200 rounded-xl text-xs focus:outline-none focus:ring-2 focus:ring-blue-500 transition-all text-slate-700">
-                            <option value="low">Low</option>
-                            <option value="medium" selected>Medium</option>
-                            <option value="high">High</option>
-                            <option value="urgent">Urgent</option>
-                        </select>
-                    </div>
-                    <div class="space-y-1.5">
-                        <label class="text-xs font-bold text-slate-700 tracking-wide uppercase">Order Number <span class="text-slate-400 font-normal">(Optional)</span></label>
-                        <input type="text" name="orderNumber" class="w-full px-4 py-2.5 bg-slate-50 border border-slate-200 rounded-xl text-xs focus:outline-none focus:ring-2 focus:ring-blue-500 transition-all text-slate-700" placeholder="e.g. #ORD-12459">
-                    </div>
-                </div>
-
-                <div class="space-y-1.5">
-                    <label class="text-xs font-bold text-slate-700 tracking-wide uppercase">Subject <span class="text-rose-500">*</span></label>
-                    <input required type="text" name="subject" class="w-full px-4 py-2.5 bg-slate-50 border border-slate-200 rounded-xl text-xs focus:outline-none focus:ring-2 focus:ring-blue-500 transition-all text-slate-700" placeholder="Brief summary of your request">
-                </div>
-
-                <div class="space-y-1.5">
-                    <label class="text-xs font-bold text-slate-700 tracking-wide uppercase">Description / Details <span class="text-rose-500">*</span></label>
-                    <textarea required name="description" rows="5" class="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-xl text-xs focus:outline-none focus:ring-2 focus:ring-blue-500 transition-all text-slate-700" placeholder="Provide as much detail as possible. For hardware issues, please include component models..."></textarea>
-                </div>
-
-                <div class="pt-2 flex items-center justify-between">
-                    <p class="text-[10px] text-slate-400 max-w-sm">By submitting this form, you agree that we may process your data to resolve your inquiry.</p>
-                    <button type="submit" class="bg-blue-600 hover:bg-blue-700 text-white font-semibold text-xs px-6 py-3 rounded-xl transition-all shadow-md inline-flex items-center space-x-2">
-                        <i data-lucide="send" class="w-4 h-4"></i>
-                        <span>Submit Request</span>
-                    </button>
-                </div>
-            </form>
-        </div>
-
-        <div id="portalMyTicketsView" class="space-y-6 hidden">
-            <nav class="text-xs text-slate-400 flex items-center space-x-2 mb-2 select-none">
-                <button onclick="resetPortalHome()" class="hover:underline flex items-center gap-1 text-slate-400 font-medium"><i data-lucide="home" class="w-3 h-3"></i> Home</button>
-                <span class="text-slate-300">&rsaquo;</span>
-                <span class="text-slate-500 font-medium">My Tickets</span>
-            </nav>
-            <div class="pb-2">
-                <h1 class="text-3xl font-bold text-slate-900 tracking-tight">Your support requests</h1>
-                <p class="text-xs text-slate-500 mt-0.5 font-medium">Track your tickets, view status details, and communicate with support agents.</p>
-            </div>
-
-            <div class="bg-white border border-slate-200 rounded-2xl shadow-sm overflow-hidden text-left">
-                <div class="p-5 border-b border-slate-100 flex flex-col md:flex-row md:items-center justify-between gap-4 bg-slate-50/50">
-                    <div class="flex items-center space-x-2">
-                        <button onclick="filterTicketsBy('all')" id="ticketFilter-all" class="text-xs font-semibold px-4 py-1.5 rounded-lg transition-all bg-white text-slate-700 border border-slate-200 shadow-sm">All Requests</button>
-                        <button onclick="filterTicketsBy('open')" id="ticketFilter-open" class="text-xs font-semibold px-4 py-1.5 rounded-lg transition-all text-slate-500 hover:text-slate-700">Open</button>
-                        <button onclick="filterTicketsBy('solved')" id="ticketFilter-solved" class="text-xs font-semibold px-4 py-1.5 rounded-lg transition-all text-slate-500 hover:text-slate-700">Solved</button>
-                    </div>
-                    <div class="relative w-full md:w-64">
-                        <span class="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
-                            <i data-lucide="search" class="w-4 h-4 text-slate-400"></i>
-                        </span>
-                        <input type="text" oninput="handleTicketSearch(this.value)" placeholder="Search tickets..." class="w-full pl-9 pr-4 py-2 bg-white border border-slate-200 rounded-xl text-xs focus:outline-none focus:ring-2 focus:ring-blue-500 shadow-sm transition-all text-slate-700">
-                    </div>
-                </div>
-
-                <div class="overflow-x-auto">
-                    <table class="w-full text-left border-collapse">
-                        <thead>
-                            <tr class="border-b border-slate-100 text-[10px] font-bold text-slate-400 uppercase tracking-wider bg-slate-50/20">
-                                <th class="py-4 px-6">Ticket ID</th>
-                                <th class="py-4 px-6">Subject</th>
-                                <th class="py-4 px-6">Category</th>
-                                <th class="py-4 px-6">Priority</th>
-                                <th class="py-4 px-6">Status</th>
-                                <th class="py-4 px-6 text-right">Created</th>
-                            </tr>
-                        </thead>
-                        <tbody id="ticketsTableBody" class="divide-y divide-slate-100 text-xs text-slate-600"></tbody>
-                    </table>
-                </div>
-                <div id="ticketsTableEmptyState" class="hidden p-12 text-center text-xs text-slate-400 font-medium italic">No support requests match your criteria.</div>
-            </div>
-        </div>
 
         <div id="portalArticlesView" class="space-y-6 hidden">
             <nav class="text-xs text-slate-400 flex items-center space-x-2 mb-2 select-none">
@@ -437,25 +324,12 @@
         </div>
     </main>
 
-    <div id="toastNotification" class="fixed bottom-6 right-6 z-50 hidden bg-slate-900 border border-slate-800 text-white rounded-xl shadow-2xl p-4 flex items-start gap-3 max-w-sm" style="animation: toastPop 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);">
-        <div class="p-1 bg-emerald-500/20 text-emerald-400 rounded-lg shrink-0">
-            <i data-lucide="check" class="w-4 h-4"></i>
-        </div>
-        <div>
-            <h4 class="text-xs font-bold">Request Submitted!</h4>
-            <p class="text-[10px] text-slate-400 mt-0.5 leading-normal">Your support ticket has been created. Use the ticket ID in "My Tickets" to trace updates.</p>
-        </div>
-        <button onclick="document.getElementById('toastNotification').classList.add('hidden')" class="text-slate-400 hover:text-slate-200 shrink-0 select-none">&times;</button>
-    </div>
-
     <script>
         @php
             /** @var \Illuminate\Support\Collection $articles */
-            /** @var \Illuminate\Support\Collection $tickets */
         @endphp
         
         const articles = {{ \Illuminate\Support\Js::from($articles) }};
-        const backendTickets = {{ \Illuminate\Support\Js::from($tickets) }};
 
         const baseTopics = [
             { id: "shipping", name: "Shipping & Delivery", icon: "truck" },
@@ -475,10 +349,6 @@
         });
 
         let activeTopicId = null;
-
-        let tickets = [...backendTickets];
-        let ticketStatusFilter = 'all';
-        let ticketSearchQuery = '';
 
         function renderPopularTopicsGrid() {
             const grid = document.getElementById('popularTopicsGrid');
@@ -518,8 +388,6 @@
             
             document.getElementById('portalHeroSection').classList.add('hidden');
             document.getElementById('portalPillarCards').classList.add('hidden');
-            document.getElementById('portalNewRequestView').classList.add('hidden');
-            document.getElementById('portalMyTicketsView').classList.add('hidden');
             document.getElementById('portalArticlesView').classList.add('hidden');
             document.getElementById('portalFAQView').classList.add('hidden');
 
@@ -804,138 +672,6 @@
             .catch(error => console.error("Error tracking article view:", error));
         }
 
-        function handleSupportRequestSubmit(event) {
-            event.preventDefault();
-            const form = event.target;
-            const formData = new FormData(form);
-            
-            const payload = {
-                name: formData.get('name'),
-                email: formData.get('email'),
-                category: formData.get('category'),
-                priority: formData.get('priority'),
-                orderNumber: formData.get('orderNumber'),
-                subject: formData.get('subject'),
-                description: formData.get('description'),
-            };
-
-            fetch('/support-tickets', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                    'X-CSRF-TOKEN': document.querySelector('meta[name="csrf-token"]').getAttribute('content')
-                },
-                body: JSON.stringify(payload)
-            })
-            .then(response => response.json())
-            .then(data => {
-                if (data.id) {
-                    form.reset();
-                    
-                    const newTkt = {
-                        ticket_number: data.id,
-                        subject: data.subject,
-                        category: data.category,
-                        priority: data.priority,
-                        status: data.status,
-                        created_at: data.created_at
-                    };
-                    tickets.unshift(newTkt);
-
-                    const toast = document.getElementById('toastNotification');
-                    toast.classList.remove('hidden');
-                    setTimeout(() => { toast.classList.add('hidden'); }, 6000);
-
-                    resetPortalHome();
-                } else {
-                    alert('Failed to submit support request. Please try again.');
-                }
-            })
-            .catch(error => {
-                console.error('Error submitting support request:', error);
-                alert('An error occurred. Please try again.');
-            });
-        }
-
-        function filterTicketsBy(status) {
-            ticketStatusFilter = status;
-
-            const buttons = ['all', 'open', 'solved'];
-            buttons.forEach(btn => {
-                const el = document.getElementById(`ticketFilter-${btn}`);
-                if (btn === status) {
-                    el.className = "text-xs font-semibold px-4 py-1.5 rounded-lg transition-all bg-white text-slate-700 border border-slate-200 shadow-sm";
-                } else {
-                    el.className = "text-xs font-semibold px-4 py-1.5 rounded-lg transition-all text-slate-500 hover:text-slate-700";
-                }
-            });
-
-            renderMyTicketsView();
-        }
-
-        function handleTicketSearch(query) {
-            ticketSearchQuery = query.trim().toLowerCase();
-            renderMyTicketsView();
-        }
-
-        function renderMyTicketsView() {
-            const tableBody = document.getElementById('ticketsTableBody');
-            const emptyState = document.getElementById('ticketsTableEmptyState');
-
-            let filtered = [...tickets];
-
-            if (ticketStatusFilter !== 'all') {
-                filtered = filtered.filter(t => t.status.toLowerCase() === ticketStatusFilter);
-            }
-
-            if (ticketSearchQuery) {
-                filtered = filtered.filter(t => 
-                    t.ticket_number.toLowerCase().includes(ticketSearchQuery) ||
-                    t.subject.toLowerCase().includes(ticketSearchQuery) ||
-                    t.category.toLowerCase().includes(ticketSearchQuery)
-                );
-            }
-
-            if (filtered.length === 0) {
-                tableBody.innerHTML = '';
-                emptyState.classList.remove('hidden');
-                return;
-            }
-
-            emptyState.classList.add('hidden');
-
-            tableBody.innerHTML = filtered.map(t => {
-                let statusBadge = '';
-                if (t.status.toLowerCase() === 'open') {
-                    statusBadge = `<span class="inline-flex items-center px-2 py-0.5 rounded-full text-[10px] font-medium bg-blue-50 text-blue-700 border border-blue-100">Open</span>`;
-                } else if (t.status.toLowerCase() === 'solved') {
-                    statusBadge = `<span class="inline-flex items-center px-2 py-0.5 rounded-full text-[10px] font-medium bg-emerald-50 text-emerald-700 border border-emerald-100">Solved</span>`;
-                } else {
-                    statusBadge = `<span class="inline-flex items-center px-2 py-0.5 rounded-full text-[10px] font-medium bg-slate-100 text-slate-700 border border-slate-200">${t.status}</span>`;
-                }
-
-                let priorityColor = 'text-slate-500';
-                if (t.priority.toLowerCase() === 'high' || t.priority.toLowerCase() === 'urgent') {
-                    priorityColor = 'text-rose-500 font-semibold';
-                } else if (t.priority.toLowerCase() === 'medium') {
-                    priorityColor = 'text-amber-500';
-                }
-
-                const displayDate = t.created_at ? new Date(t.created_at).toLocaleDateString() : 'N/A';
-
-                return `
-                    <tr class="hover:bg-slate-50/50 transition-colors">
-                        <td class="py-4 px-6 font-bold text-slate-900 select-all">${t.ticket_number}</td>
-                        <td class="py-4 px-6 font-medium text-slate-800 max-w-xs truncate">${t.subject}</td>
-                        <td class="py-4 px-6 text-slate-400 capitalize">${t.category}</td>
-                        <td class="py-4 px-6 capitalize ${priorityColor}">${t.priority}</td>
-                        <td class="py-4 px-6">${statusBadge}</td>
-                        <td class="py-4 px-6 text-right text-slate-400 font-medium">${displayDate}</td>
-                    </tr>
-                `;
-            }).join('');
-        }
-
         function resetPortalHome() {
             activeTopicId = null;
 
@@ -945,8 +681,6 @@
             document.getElementById('portalSatisfactionBanner').classList.remove('hidden');
             
             document.getElementById('filteredArticlesContainer').classList.add('hidden');
-            document.getElementById('portalNewRequestView').classList.add('hidden');
-            document.getElementById('portalMyTicketsView').classList.add('hidden');
             document.getElementById('portalArticlesView').classList.add('hidden');
             document.getElementById('portalFAQView').classList.add('hidden');
             document.getElementById('portalTermsView').classList.add('hidden');
@@ -964,8 +698,6 @@
             document.getElementById('portalSatisfactionBanner').classList.add('hidden');
             document.getElementById('filteredArticlesContainer').classList.add('hidden');
             
-            document.getElementById('portalNewRequestView').classList.add('hidden');
-            document.getElementById('portalMyTicketsView').classList.add('hidden');
             document.getElementById('portalArticlesView').classList.add('hidden');
             document.getElementById('portalFAQView').classList.add('hidden');
             document.getElementById('portalTermsView').classList.add('hidden');
@@ -985,17 +717,9 @@
                 document.getElementById('portalSatisfactionBanner').classList.remove('hidden');
             } else if (targetView === 'FAQ') {
                 document.getElementById('portalFAQView').classList.remove('hidden');
-            } else if (targetView === 'NEW_REQUEST') {
-                document.getElementById('portalNewRequestView').classList.remove('hidden');
             } else if (targetView === 'TERMS') {
                 document.getElementById('portalTermsView').classList.remove('hidden');
                 document.getElementById('portalSatisfactionBanner').classList.remove('hidden');
-            } else if (targetView === 'MY_TICKETS') {
-                document.getElementById('portalMyTicketsView').classList.remove('hidden');
-                document.getElementById('portalSatisfactionBanner').classList.remove('hidden');
-                ticketStatusFilter = 'all';
-                ticketSearchQuery = '';
-                renderMyTicketsView();
             }
 
             lucide.createIcons();
